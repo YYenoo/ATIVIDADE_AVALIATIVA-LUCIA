@@ -188,7 +188,6 @@ def cadastrar_pedido():
         "descricao": descricao,
         "status": "Pendente",
         "entregador": None,
-        "ativo": True
     }
 
     print("Pedido cadastrado com sucesso.")
