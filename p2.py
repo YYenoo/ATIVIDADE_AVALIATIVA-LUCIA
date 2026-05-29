@@ -361,7 +361,7 @@ def atualizar():
 
         case "2":
 
-            if pedido["entregador"] is not None :
+            if pedido["entregador"] is not None and pedido["status"] != "Entregue" :
 
                 entregador = entregadores[pedido["entregador"]]
 
@@ -370,12 +370,11 @@ def atualizar():
 
                 entregador["disponivel"] = True
 
-            del pedidos[id_pedido]
+                del pedidos[id_pedido]
 
-            print("Pedido cancelado e removido do sistema.")
-
-        case _:
-            print("Opção inválida.")
+                print("Pedido cancelado e removido do sistema.")
+            else:
+                print("Erro ao remover pedido! ")
 
 
 def mostrar(id_pedido, pedido):
